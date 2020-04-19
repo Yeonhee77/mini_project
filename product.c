@@ -114,6 +114,18 @@ void searchProduct(Product *p, int count) {
 				}
 			}
 		}
+	}else if(menu==2) {
+		printf("원하시는 제품의 중량을 넣어주세요. ");
+		scanf("%d", &search);
+
+		for(int i=0;i<=count;i++) {
+			if(p[i].price!=-1) {
+				if(strstr(p[i].weight, search)!=NULL) {
+					printf("%s\t     %d\t %d\n", p[i].name, p[i].weight, p[i].price);
+					index++;
+				}
+			}
+		}
 	}
 
 	if(index==0) {
