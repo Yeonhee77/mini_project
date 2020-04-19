@@ -75,3 +75,18 @@ void saveProduct(Product *p, int count) {
 
 	printf("저장되었습니다\n");
 }
+
+int loadProduct(Product *p, int count) {
+	FILE *fp = fopen("product.txt", "rt");
+
+	if(fp==NULL) return 0;
+
+	for(count=0;;count++) {
+		fscanft(fp, "%s %d %d\n", p[count].naem, p[count].weigth, p[count].price);
+	if(feof(fp)) break;
+	}
+
+	fclose(fp);
+
+	return count;
+}
