@@ -9,6 +9,9 @@ int main(void) {
 	int no;
 	int index=0;
 
+	count = loadProduct(p, index);
+	index = count;
+
     	while(1) {
         	readMenu(p[count]);
         	scanf("%d", &menu);
@@ -52,6 +55,12 @@ int main(void) {
 					count--;
 				}
     			}
+		}else if(menu==5){
+			if(count==0){
+				printf("데이터가 없습니다.\n");
+			}else{
+				saveProduct(p, index);
+			}
 		}
 	}
     	printf("프로그램이 종료 되었습니다.\n");
