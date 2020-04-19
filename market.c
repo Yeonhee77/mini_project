@@ -61,6 +61,12 @@ int main(void) {
 			}else{
 				saveProduct(p, index);
 			}
+		}else if(menu==6) {
+			if(count==0) {
+				printf("데이터가 없습니다.\n");
+			}else{
+				searchProduct(p, index);
+			}
 		}
 	}
     	printf("프로그램이 종료 되었습니다.\n");
