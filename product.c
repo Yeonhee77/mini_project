@@ -63,4 +63,15 @@ int deleteProduct(Product *p) {
 	return 1;
 }
 
+void saveProduct(Product *p, int count) {
+	FILE *fp = fopen("product.txt", "wt");
 
+	for(int i=0;i<=count;i++) {
+		if(p[i].price == -1) continue;
+		fprintf(fp, "%s %d %d\n", p[i].name, p[i].weight, p[i].price);
+	}
+	
+	fclose(fp);
+
+	printf("저장되었습니다\n");
+}
