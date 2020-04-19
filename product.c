@@ -90,3 +90,33 @@ int loadProduct(Product *p, int count) {
 
 	return count;
 }
+
+void searchProduct(Product *p, int count) {
+	char name[30];
+	int search;
+	int index=0;
+	int menu;
+
+	printf("어떤 방식으로 검색하시겠습니까? (이름: 1, 중량: 2, 가격: 3, 취소: 0) ");
+	scanf("%d", &menu);
+
+	if(menu==0) {
+		printf("취소되었습니다.\n");
+	}else if(menu==1) {
+		printf("원하시는 제품의 이름을 넣어주세요. ");
+		scanf("%s", name);
+
+		for(int i=0;i<=count;i++) {
+			if(p[i].price != -1) {
+				if(strstr(p[i].name, name)!=NULL) {
+					printf("%s\t     %d\t %d\n", p[i].name, p[i].weithg, p[i].price);
+					index++;
+				}
+			}
+		}
+	}
+
+	if(index==0) {
+		printf("검색 정보가 없습니다.\n");
+	}
+}
