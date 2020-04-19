@@ -57,13 +57,13 @@ int main(void) {
     			}
 		}else if(menu==5){
 			if(count==0){
-				printf("데이터가 없습니다.\n");
+				printf("등록된 데이터가 없습니다.\n");
 			}else{
 				saveProduct(p, index);
 			}
 		}else if(menu==6) {
 			if(count==0) {
-				printf("데이터가 없습니다.\n");
+				printf("등록된 데이터가 없습니다.\n");
 			}else{
 				searchProduct(p, index);
 			}
