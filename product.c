@@ -120,7 +120,7 @@ void searchProduct(Product *p, int count) {
 
 		for(int i=0;i<=count;i++) {
 			if(p[i].price!=-1) {
-				if(strstr(p[i].weight, search)!=NULL) {
+				if(p[i].weight==search) {
 					printf("%s\t     %d\t %d\n", p[i].name, p[i].weight, p[i].price);
 					index++;
 				}
