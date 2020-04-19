@@ -79,7 +79,9 @@ void saveProduct(Product *p, int count) {
 int loadProduct(Product *p, int count) {
 	FILE *fp = fopen("product.txt", "rt");
 
-	if(fp==NULL) return 0;
+	if(fp==NULL){
+		 return 0;
+	}
 
 	for(count=0;;count++) {
 		fscanf(fp, "%s %d %d\n", p[count].name, &p[count].weight, &p[count].price);
