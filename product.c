@@ -82,7 +82,7 @@ int loadProduct(Product *p, int count) {
 	if(fp==NULL) return 0;
 
 	for(count=0;;count++) {
-		fscanft(fp, "%s %d %d\n", p[count].naem, p[count].weigth, p[count].price);
+		fscanf(fp, "%s %d %d\n", p[count].name, p[count].weight, p[count].price);
 	if(feof(fp)) break;
 	}
 
